@@ -52,7 +52,7 @@ export const SidebarTaskItem = observer(function SidebarTaskItem({
 
   const handleProvision = () => {
     if (task.state !== 'unprovisioned' || task.phase !== 'idle') return;
-    taskManager?.provisionTask(taskId);
+    void taskManager?.provisionTask(taskId);
   };
 
   const handleArchive = () => {
@@ -112,7 +112,7 @@ export const SidebarTaskItem = observer(function SidebarTaskItem({
           >
             {taskName}
           </span>
-          <TaskGitDiffStats task={task} className="h-full shrink-0 flex items-center pr-1" />
+          <TaskGitDiffStats task={task} className="h-full shrink-0 flex items-center pl-1 pr-1" />
           <RenderPrBadge task={task} />
         </div>
         <TaskSidebarAgentStatus task={task} />
